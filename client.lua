@@ -57,6 +57,8 @@ local function createPrompt()
 end
 
 Citizen.CreateThread(function()
+    repeat Wait(1000) until LocalPlayer.state.IsInSession
+    myIdentifier = LocalPlayer.state.Character.CharId
     while true do
         Wait(500)
         if not businessOwners or not myIdentifier then goto continue end
